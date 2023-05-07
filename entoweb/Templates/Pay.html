@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+body {
+  background-image: url('data:image/jpeg;base64,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');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    #card-element {
+      margin-bottom: 20px;
+    }
+    .card-errors {
+      color: #dc3545;
+      margin-top: 10px;
+    }
+  </style>
+  <style>
+
+    /* Overlay styles */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+  </style>
+<script>
+    function showPopup() {
+      alert("Payment successful!");
+    }
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="text-center">Payment Form</h1>
+    <hr>
+    <form id="payment-form">
+      <div class="form-group">
+        <label for="name">Name on Card:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card-number" pattern="\d{4}-\d{4}-\d{4}-\d{4}" required>
+        <!--<div id="card-element"></div>-->
+        <div id="card-errors"></div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <label for="expiry-date">Expiry Date:</label>
+          <input type="text" class="form-control" id="expiry-date" name="expiry_date" placeholder="MM / YY" required>
+        </div>
+        <div class="col">
+          <label for="cvv">CVV:</label>
+          <input type="text" class="form-control" id="cvv" name="cvv" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input type="text" class="form-control" id="amount" name="amount" required>
+        </div>
+      </div>
+      <button type="submit" onclick="ShowPopup()" class="btn btn-primary">Pay Now</button><br>
+
+    </form>
+    <style>
+h6 {text-align: center;}
+div {text-align: center;}
+</style><br>
+  <h6>-ᴏʀ ᴘᴀʏ ᴜsɪɴɢ-</h6>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Font Awesome Icons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<button style="font-size:34px;color:red"> <i class="fa fa-google-wallet"></i></button>
+<button style="font-size:34px;color:blue"><i class="fa fa-cc-paypal"></i></button>
+<button style="font-size:34px;color:sky-blue"><i class="fa fa-cc-mastercard"></i></button>
+    <div>
+    <form action="/welcome">
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary">Back to Home</button>
+    </form>
+    </div>
+  </div>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    var stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY');
+    var elements = stripe.elements();
+    var cardElement = elements.create('card');
+    cardElement.mount('#card-element');
+    var cardErrors = document.getElementById('card-errors');
+    var submitButton = document.getElementById('submit-button');
+    var form = document.getElementById('payment-form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      submitButton.disabled = true;
+      stripe.createToken(cardElement).then(function(result) {
+        if (result.error) {
+          cardErrors.textContent = result.error.message;
+          submitButton.disabled = false;
+        } else {
+          var tokenInput = document.createElement('input');
+          tokenInput.setAttribute('type', 'hidden');
+          tokenInput.setAttribute('name', 'stripeToken');
+          tokenInput.setAttribute('value', result.token.id);
+          form.appendChild(tokenInput);
+          form.submit();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
